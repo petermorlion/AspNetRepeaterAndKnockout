@@ -6,12 +6,14 @@
 <head runat="server">
     <title>Knockout and Repeaters</title>
     <script src="Scripts/jquery-1.7.1.min.js"></script>
-    <script src="~/Scripts/knockout-2.2.1.js"></script>
+    <script src="Scripts/knockout-2.2.1.js"></script>
     <script src="Scripts/knockout.mapping-latest.js"></script>
+    <script src="Scripts/customersViewModel.js"></script>
     <script type="text/javascript">
         $(function () {
-            var model = $('[id$=modelHiddenField]').val();
-            var viewModel = new customersViewModel(model);
+            var json = $('[id$=modelHiddenField]').val();
+            var model = $.parseJSON(json);
+            var viewModel = new CustomersViewModel(model);
             ko.applyBindings(viewModel);
         });
     </script>
@@ -35,7 +37,7 @@
                             <tr>
                                 <td><asp:Literal runat="server" ID="firstNameLiteral"></asp:Literal></td>
                                 <td><asp:Literal runat="server" ID="lastNameLiteral"></asp:Literal></td>
-                                <td><asp:CheckBox runat="server" ID="exclusiveMemberCheckBox" data-bind="value: exclusiveMember"/></td>
+                                <td><asp:CheckBox runat="server" ID="exclusiveMemberCheckBox" data-bind="checked: exclusiveMember"/></td>
                                 <td data-bind="text: fee"></td>
                             </tr>
             </ItemTemplate>

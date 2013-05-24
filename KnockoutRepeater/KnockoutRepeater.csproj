@@ -97,6 +97,7 @@
     <Content Include="Default.aspx" />
     <Content Include="packages.config" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\customersViewModel.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\knockout-2.2.1.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
