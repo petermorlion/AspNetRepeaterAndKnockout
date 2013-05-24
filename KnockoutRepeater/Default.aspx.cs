@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace KnockoutRepeater
@@ -55,7 +56,7 @@ namespace KnockoutRepeater
             CustomerModel model = (CustomerModel) e.Item.DataItem;
             ((Literal)e.Item.FindControl("firstNameLiteral")).Text = model.firstName;
             ((Literal)e.Item.FindControl("lastNameLiteral")).Text = model.lastName;
-            ((CheckBox)e.Item.FindControl("exclusiveMemberCheckBox")).Checked = model.exclusiveMember;
+            ((HtmlInputCheckBox)e.Item.FindControl("exclusiveMemberCheckBox")).Checked = model.exclusiveMember;
         }
 
         private class CustomerCollectionModel

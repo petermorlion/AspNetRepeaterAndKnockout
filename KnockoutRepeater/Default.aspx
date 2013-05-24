@@ -34,10 +34,10 @@
                     <tbody>
             </HeaderTemplate>
             <ItemTemplate>
-                            <tr>
-                                <td><asp:Literal runat="server" ID="firstNameLiteral"></asp:Literal></td>
+                            <tr data-bind="with: customers()[<%# Container.ItemIndex %>]">
+                                <td><asp:Literal runat="server" ID="firstNameLiteral"></asp:Literal><input type="text" data-bind="value: firstName"/><span data-bind="text: firstName"></span></td>
                                 <td><asp:Literal runat="server" ID="lastNameLiteral"></asp:Literal></td>
-                                <td><asp:CheckBox runat="server" ID="exclusiveMemberCheckBox" data-bind="checked: exclusiveMember"/></td>
+                                <td><input type="checkbox" id="exclusiveMemberCheckBox" runat="server" data-bind="checked: exclusiveMember" /></td>
                                 <td data-bind="text: fee"></td>
                             </tr>
             </ItemTemplate>
