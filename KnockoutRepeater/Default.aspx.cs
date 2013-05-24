@@ -56,6 +56,9 @@ namespace KnockoutRepeater
             CustomerModel model = (CustomerModel) e.Item.DataItem;
             ((Literal)e.Item.FindControl("firstNameLiteral")).Text = model.firstName;
             ((Literal)e.Item.FindControl("lastNameLiteral")).Text = model.lastName;
+            
+            // Asp.net checkboxes render inside a span, and Knockout's data-bind is left on the span. There are ways around this, but for our pursposes, 
+            // an HTML checkbox with runat="server" is enough.
             ((HtmlInputCheckBox)e.Item.FindControl("exclusiveMemberCheckBox")).Checked = model.exclusiveMember;
         }
 
